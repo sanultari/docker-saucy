@@ -1,4 +1,5 @@
-FROM astral1/saucy:min
+FROM astral1/saucy:ppa
 MAINTAINER Jiung Jeong <ethernuiel@sanultari.com> @astral1
 
-RUN apt-get -y install software-properties-common
+RUN add-apt-repository ppa:saltstack/salt && apt-get update
+RUN apt-get -y install salt-minion
